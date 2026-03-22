@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 #
 # ============================================================================
-# SCRIPT: Gerir Ficheiros
+# SCRIPT: Gerir Ficheiros por Extensão
 # ============================================================================
 # Descrição: Interface GTK para gerir ficheiros por extensão no Nautilus
 # Funcionalidades: Copiar, Mover, Reciclagem, Eliminar, Backup
 # Compatibilidade: Debian 13+ / GNOME / Nautilus
-# Instalação: ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+# Instalação: ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 # ============================================================================
 
 # ============================================================
@@ -55,7 +55,7 @@ class FileExtensionManager(Gtk.Window):
     # --------------------------------------------------------
     def __init__(self):
         # Chama o construtor da classe pai (Gtk.Window)
-        super().__init__(title="Gerir Ficheiros")
+        super().__init__(title="Gerir Ficheiros por Extensão")
         
         # Configurações da janela principal
         self.set_default_size(700, 600)      # Tamanho inicial: 700x600 pixels

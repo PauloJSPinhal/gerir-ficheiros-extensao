@@ -65,56 +65,7 @@ python3-gi-cairo
 gir1.2-gtk-3.0
 ```
 ## 🚀 Instalação
-### Instalação Automática
-```bash
-# 1. Clone o repositório
-git clone https://github.com/SEU_USERNAME/gerir-ficheiros-extensao.git
-cd gerir-ficheiros-extensao
-
-# 2. Instale as dependências
-sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
-
-# 3. Crie a pasta de scripts do Nautilus (se não existir)
-mkdir -p ~/.local/share/nautilus/scripts/
-
-# 4. Copie o script
-cp "Gerir Ficheiros" ~/.local/share/nautilus/scripts/
-
-# 5. Dê permissão de execução
-chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
-
-# 6. Reinicie o Nautilus
-nautilus -q
-```
-### Instalação Manual
-#### 1. Instale as dependências
-```bash
-sudo apt update
-sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
-```
-
-#### 2. Crie a pasta de scripts
-```bash
-mkdir -p ~/.local/share/nautilus/scripts/
-```
-
-#### 3. Crie o ficheiro do script
-```bash
-nano ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
-```
-
-#### 4. Cole o código do ficheiro *Gerir Ficheiros*
-#### 5. Guarde e saia: *Ctrl + O*, *Enter*, *Ctrl + X*
-#### 6. Dê permissão de execução
-
-```bash
-chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
-```
-#### 7. Reinicie o Nautilus
-
-```bash
-nautilus -q
-```
+Consultar **INSTALL.md**
 
 ## 📖 Utilização
 ### Passo a Passo
@@ -124,7 +75,7 @@ nautilus -q
 	- Use *Ctrl + A* para selecionar todos
 2. Abra o script:
 	- Clique direito nos ficheiros selecionados
-	- Menu Scripts → Gerir Ficheiros
+	- Menu Scripts → Gerir Ficheiros por Extensão
 3. Selecione as extensões:
 	- Marque os checkboxes das extensões desejadas
 	- Pode selecionar uma ou várias extensões

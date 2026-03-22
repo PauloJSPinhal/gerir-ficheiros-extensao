@@ -1,6 +1,6 @@
 # 📦 Guia de Instalação Detalhado
 
-Este guia fornece instruções passo a passo para instalar o script **Gerir Ficheiros por Extensão** no seu sistema Linux com GNOME/Nautilus.
+Este guia fornece instruções passo a passo para instalar o script **gerir-ficheiros-por-extensao.py** no seu sistema Linux com GNOME/Nautilus.
 
 ## 📋 Pré-requisitos
 
@@ -61,25 +61,31 @@ ls -la ~/.local/share/nautilus/
 cd ~
 git clone https://github.com/SEU_USERNAME/gerir-ficheiros-extensao.git
 cd gerir-ficheiros-extensao
-cp "Gerir Ficheiros" ~/.local/share/nautilus/scripts/
+cp gerir-ficheiros-por-extensao.py ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 ```
 #### Opção B: Download Manual
-1. Descarregue o ficheiro **Gerir Ficheiros**
+1. Descarregue o ficheiro **gerir-ficheiros-por-extensao.py**
 2. Copie para *~/.local/share/nautilus/scripts/*
 ```bash
-cp ~/Downloads/"Gerir Ficheiros" ~/.local/share/nautilus/scripts/
+cp ~/Downloads/gerir-ficheiros-por-extensao.py ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 ```
 #### Opção C: Criar Manualmente
 ```bash
-nano ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+nano ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 # Cole o código do script
 # Ctrl+O para guardar, Ctrl+X para sair
+```
+#### Opção D: Criar Ligação Símbólica
+Na pasta do projeto
+```bash
+lln -s "$(pwd)/gerir-ficheiros-por-extensao.py" ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
+# O comando $(pwd) insere automaticamente o caminho completo e exato da pasta onde você está, eliminando erros de digitação.
 ```
 ### Passo 5: Definir Permissões
 
 ```
 # Tornar executável
-chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 
 # Verificar permissões
 ls -la ~/.local/share/nautilus/scripts/
@@ -99,12 +105,12 @@ nautilus &
 1. Abra o **Nautilus**
 2. Selecione alguns ficheiros
 3. Clique direito → **Scripts**
-4. Verifique se **Gerir Ficheiros** aparece na lista
+4. Verifique se **Gerir Ficheiros por Extensão** aparece na lista
 ## 🔧 Configuração Opcional
 ### Personalizar Limite de Extensão
 Edite o script:
 ```bash
-nano ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+nano ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 ```
 Altere as variáveis no início:
 ```bash
@@ -115,7 +121,7 @@ MIN_EXTENSION_LENGTH = 1
 Pode criar um atalho personalizado nas definições do GNOME:
 1. **Definições** → **Teclado** → ***Atalhos Personalizados**
 2. Adicionar novo atalho
-3. Comando: *~/.local/share/nautilus/scripts/"Gerir Ficheiros"*
+3. Comando: *~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"*
 4. Definir tecla de atalho
 
 ## ✅ Testar Instalação
@@ -129,7 +135,7 @@ touch ~/teste_script/documento.pdf
 
 # Selecionar e executar no Nautilus
 nautilus ~/teste_script
-# Selecione os ficheiros → Botão direito → Scripts → Gerir Ficheiros
+# Selecione os ficheiros → Botão direito → Scripts → Gerir Ficheiros por Extensão
 ```
 ### Teste de Funcionalidades
 ```
@@ -146,7 +152,7 @@ nautilus ~/teste_script
 ├──────────────────────────┼─────────────────────────────────────┤
 │   Tecla Enter            │  Executa ação selecionada           │
 ├──────────────────────────┼─────────────────────────────────────┤
-│   Tecla Esc              │  ancela e fecha                     │
+│   Tecla Esc              │  Cancela e fecha                    │
 └──────────────────────────┴─────────────────────────────────────┘
 ```
 
@@ -155,10 +161,10 @@ nautilus ~/teste_script
 Solução:
 ```bash
 # Verificar se ficheiro existe
-ls -la ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+ls -la ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 
 # Verificar permissões
-chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+chmod +x ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 
 # Reiniciar Nautilus
 nautilus -q
@@ -177,16 +183,16 @@ python3 -c "from gi.repository import Gtk; print('OK')"
 Solução:
 ```bash
 # Corrigir proprietário
-chown $USER:$USER ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+chown $USER:$USER ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 
 # Corrigir permissões
-chmod 755 ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+chmod 755 ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 ```
 ### Problema: Interface não abre
 Solução:
 ```bash
 # Testar execução manual
-NAUTILUS_SCRIPT_SELECTED_FILE_PATHS="" python3 ~/.local/share/nautilus/scripts/"Gerir Ficheiros"
+NAUTILUS_SCRIPT_SELECTED_FILE_PATHS="" python3 ~/.local/share/nautilus/scripts/"Gerir Ficheiros por Extensão"
 
 # Verificar erros no terminal
 ```
